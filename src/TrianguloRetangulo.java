@@ -24,14 +24,18 @@
 
  /** Representação de uma forma Triângulo Retângulo */
 public class TrianguloRetangulo extends PoligonoReto{
-    
+    private double cateto1;
+    private double cateto2;
+
     /**
      * Construtor: recebe os catetos. A classe-mãe valida ambos valores para o mínimo de 1
      * @param cateto1 Cateto para o triângulo. Valor deve ser igual ou maior a 1, ou será corrigido para 1.
      * @param cateto2 Cateto para o triângulo. Valor deve ser igual ou maior a 1, ou será corrigido para 1.
      */
     public TrianguloRetangulo(double cateto1, double cateto2){
-        //TODO
+        super("TRIANGULO RETÂNGULO", cateto1, cateto2);
+        this.cateto1 = cateto1 >= 1 ? cateto1 : 1.0;
+        this.cateto2 = cateto2 >= 1 ? cateto2 : 1.0;
     }
 
     /**
@@ -40,7 +44,7 @@ public class TrianguloRetangulo extends PoligonoReto{
      */
     @Override
     public double area(){
-        //TODO
+        return (double) (cateto1 * cateto2) / 2;
     }
 
     /**
@@ -49,7 +53,7 @@ public class TrianguloRetangulo extends PoligonoReto{
      */
     @Override
     public double perimetro(){
-        //TODO
+        return (double) cateto1 + cateto2 + hipotenusa();
     }
 
     /**
